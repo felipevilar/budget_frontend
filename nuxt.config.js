@@ -39,7 +39,7 @@ export default {
   },
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
-    baseURL: 'https://core3.herokuapp.com',
+    baseURL: 'https://backend-budget.herokuapp.com/',
     validateStatus: function (status) {
       return status >= 200 && status < 300 // default
     },
