@@ -2,7 +2,7 @@ import Vue from 'vue'
 
 /* export const baseUrl = 'http://localhost:4000' */
 
-export const baseUrl = 'https://backend-budget.herokuapp.com/'
+export const baseUrl = 'https://backend-budget.herokuapp.com'
 
 export function showError(e) {
   if (e && e.response && e.response.data) {

@@ -1,0 +1,68 @@
+{
+  "Loading": {
+    "description": "Auto imported from components/Loading.vue"
+  },
+  "LazyLoading": {
+    "description": "Auto imported from components/Loading.vue"
+  },
+  "Home": {
+    "description": "Auto imported from components/home/Home.vue"
+  },
+  "LazyHome": {
+    "description": "Auto imported from components/home/Home.vue"
+  },
+  "Stat": {
+    "description": "Auto imported from components/home/Stat.vue"
+  },
+  "LazyStat": {
+    "description": "Auto imported from components/home/Stat.vue"
+  },
+  "BrandAdmin": {
+    "description": "Auto imported from components/admin/brands/BrandAdmin.vue"
+  },
+  "LazyBrandAdmin": {
+    "description": "Auto imported from components/admin/brands/BrandAdmin.vue"
+  },
+  "BrandList": {
+    "description": "Auto imported from components/admin/brands/BrandList.vue"
+  },
+  "LazyBrandList": {
+    "description": "Auto imported from components/admin/brands/BrandList.vue"
+  },
+  "ProductAdmin": {
+    "description": "Auto imported from components/admin/products/ProductAdmin.vue"
+  },
+  "LazyProductAdmin": {
+    "description": "Auto imported from components/admin/products/ProductAdmin.vue"
+  },
+  "ProductList": {
+    "description": "Auto imported from components/admin/products/ProductList.vue"
+  },
+  "LazyProductList": {
+    "description": "Auto imported from components/admin/products/ProductList.vue"
+  },
+  "CategoryAdmin": {
+    "description": "Auto imported from components/admin/categories/CategoryAdmin.vue"
+  },
+  "LazyCategoryAdmin": {
+    "description": "Auto imported from components/admin/categories/CategoryAdmin.vue"
+  },
+  "CategoryList": {
+    "description": "Auto imported from components/admin/categories/CategoryList.vue"
+  },
+  "LazyCategoryList": {
+    "description": "Auto imported from components/admin/categories/CategoryList.vue"
+  },
+  "UserAdmin": {
+    "description": "Auto imported from components/admin/users/UserAdmin.vue"
+  },
+  "LazyUserAdmin": {
+    "description": "Auto imported from components/admin/users/UserAdmin.vue"
+  },
+  "UserList": {
+    "description": "Auto imported from components/admin/users/UserList.vue"
+  },
+  "LazyUserList": {
+    "description": "Auto imported from components/admin/users/UserList.vue"
+  }
+}

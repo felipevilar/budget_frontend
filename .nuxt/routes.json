@@ -1,0 +1,30 @@
+[
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\budget_frontend\\\\pages\\\\admin.vue",
+    "chunkName": "pages/admin",
+    "_name": "_f8b4853a"
+  },
+  {
+    "name": "budget",
+    "path": "/budget",
+    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\budget_frontend\\\\pages\\\\budget.vue",
+    "chunkName": "pages/budget",
+    "_name": "_bce4603e"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\budget_frontend\\\\pages\\\\login.vue",
+    "chunkName": "pages/login",
+    "_name": "_1bde0c7d"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\budget_frontend\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_52366966"
+  }
+]
