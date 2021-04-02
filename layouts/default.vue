@@ -28,15 +28,17 @@
 
     <v-app-bar v-if="isMenuVisible" :clipped-left="clipped" fixed app>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <v-btn icon @click.stop="miniVariant = !miniVariant">
+      <!--       <v-btn icon @click.stop="miniVariant = !miniVariant">
         <v-icon>mdi-{{ `chevron-${miniVariant ? 'right' : 'left'}` }}</v-icon>
       </v-btn>
-      <v-btn icon @click.stop="clipped = !clipped">
+       <v-btn icon @click.stop="clipped = !clipped">
         <v-icon>mdi-application</v-icon>
       </v-btn>
       <v-btn icon @click.stop="fixed = !fixed">
         <v-icon>mdi-minus</v-icon>
       </v-btn>
+      -->
+      <!-- <img src="./../assets/logo.png" class="mr-2" width="66px" height="50px" /> -->
       <v-toolbar-title v-text="title" />
       <v-spacer />
       <div class="px-1">
@@ -44,9 +46,9 @@
           <template v-slot:activator="{ on }">
             <v-btn icon x-large v-on="on">
               <v-avatar color="orange accent" size="48">
-                <span class="white--text font-weight-bold"
-                  >{{ (user.name[0]+user.name[1]).toUpperCase() }}</span
-                >
+                <span class="white--text font-weight-bold">{{
+                  (user.name[0] + user.name[1]).toUpperCase()
+                }}</span>
               </v-avatar>
             </v-btn>
           </template>
@@ -128,7 +130,7 @@ export default {
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: '3CORE TECNOLOGIA',
+      title: "BUDGET",
     }
   },
   methods: {
@@ -140,6 +142,7 @@ export default {
     async validateToken() {
       console.log('async validateToken()')
       if (process.browser) {
+        console.log('process.browser)')
         this.validatingToken = true
 
         const json = localStorage.getItem(userKey)
@@ -167,6 +170,7 @@ export default {
 
         this.validatingToken = false
       } else {
+        console.log('else process.browser)')
         this.$router.push({ path: '/login' })
       }
     },

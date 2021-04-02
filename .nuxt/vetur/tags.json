@@ -5,6 +5,24 @@
   "LazyLoading": {
     "description": "Auto imported from components/Loading.vue"
   },
+  "DeleteDialog": {
+    "description": "Auto imported from components/budget/DeleteDialog.vue"
+  },
+  "LazyDeleteDialog": {
+    "description": "Auto imported from components/budget/DeleteDialog.vue"
+  },
+  "ExpandedProductView": {
+    "description": "Auto imported from components/budget/ExpandedProductView.vue"
+  },
+  "LazyExpandedProductView": {
+    "description": "Auto imported from components/budget/ExpandedProductView.vue"
+  },
+  "FooterBudget": {
+    "description": "Auto imported from components/budget/FooterBudget.vue"
+  },
+  "LazyFooterBudget": {
+    "description": "Auto imported from components/budget/FooterBudget.vue"
+  },
   "Home": {
     "description": "Auto imported from components/home/Home.vue"
   },
@@ -29,18 +47,6 @@
   "LazyBrandList": {
     "description": "Auto imported from components/admin/brands/BrandList.vue"
   },
-  "ProductAdmin": {
-    "description": "Auto imported from components/admin/products/ProductAdmin.vue"
-  },
-  "LazyProductAdmin": {
-    "description": "Auto imported from components/admin/products/ProductAdmin.vue"
-  },
-  "ProductList": {
-    "description": "Auto imported from components/admin/products/ProductList.vue"
-  },
-  "LazyProductList": {
-    "description": "Auto imported from components/admin/products/ProductList.vue"
-  },
   "CategoryAdmin": {
     "description": "Auto imported from components/admin/categories/CategoryAdmin.vue"
   },
@@ -52,6 +58,18 @@
   },
   "LazyCategoryList": {
     "description": "Auto imported from components/admin/categories/CategoryList.vue"
+  },
+  "ProductAdmin": {
+    "description": "Auto imported from components/admin/products/ProductAdmin.vue"
+  },
+  "LazyProductAdmin": {
+    "description": "Auto imported from components/admin/products/ProductAdmin.vue"
+  },
+  "ProductList": {
+    "description": "Auto imported from components/admin/products/ProductList.vue"
+  },
+  "LazyProductList": {
+    "description": "Auto imported from components/admin/products/ProductList.vue"
   },
   "UserAdmin": {
     "description": "Auto imported from components/admin/users/UserAdmin.vue"

@@ -2,29 +2,29 @@
   {
     "name": "admin",
     "path": "/admin",
-    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\budget_frontend\\\\pages\\\\admin.vue",
+    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\sistema\\\\budget_frontend\\\\pages\\\\admin.vue",
     "chunkName": "pages/admin",
-    "_name": "_f8b4853a"
+    "_name": "_3a7e2a19"
   },
   {
     "name": "budget",
     "path": "/budget",
-    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\budget_frontend\\\\pages\\\\budget.vue",
+    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\sistema\\\\budget_frontend\\\\pages\\\\budget.vue",
     "chunkName": "pages/budget",
-    "_name": "_bce4603e"
+    "_name": "_747a0c2a"
   },
   {
     "name": "login",
     "path": "/login",
-    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\budget_frontend\\\\pages\\\\login.vue",
+    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\sistema\\\\budget_frontend\\\\pages\\\\login.vue",
     "chunkName": "pages/login",
-    "_name": "_1bde0c7d"
+    "_name": "_5a930d9a"
   },
   {
     "name": "index",
     "path": "/",
-    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\budget_frontend\\\\pages\\\\index.vue",
+    "component": "C:\\\\Users\\\\Felipe\\\\Documents\\\\sistema\\\\budget_frontend\\\\pages\\\\index.vue",
     "chunkName": "pages/index",
-    "_name": "_52366966"
+    "_name": "_090ed61c"
   }
 ]

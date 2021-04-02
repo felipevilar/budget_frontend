@@ -6,19 +6,21 @@
   >
     <v-card light class="pa-5" elevation="18">
       <v-container class="text-center pa-0 ma-0">
-      <img src="~/assets/marca_topper.png" width="50%" style=""/>
+      <img src="~/assets/logo.png" width="50%" style=""/>
       </v-container>
       <h2 class="info--text">Login</h2>
       <v-form ref="form">
         <v-text-field
           v-model="user.email"
           label="E-mail"
+          placeholder="root"
           required
         ></v-text-field>
 
         <v-text-field
           v-model="user.password"
           label="Senha"
+          placeholder="root"
           required
           type="password"
         ></v-text-field>
