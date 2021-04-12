@@ -1,6 +1,25 @@
 <template>
   <div id="app">
-<!--     <v-row>
+    <div class="main-container">
+      <div><img src="~/assets/logo.png" /></div>
+      <h1>Bem-Vindo!</h1>
+      <p>
+        Bem-vindo ao Sistema de Orçamento! Você pode utiliza-lo para criar
+        orçamentos para seus clientes. O sistema calcula o custo e o lucro para
+        cada produto no orçamento, além do custo e lucro total, calculados em
+        tempo real. Assim você não precisa de nenhum editor de texto/planilha e
+        nem calculadora, economizando seu tempo preciosos.
+      </p>
+      <h1>Welcome!</h1>
+      <p>
+        Welcome to the Budget System! You can use it to create quotes for your
+        customers. The system calculates the cost and profit for each product in
+        the budget, in addition to the total cost and profit, calculated in real
+        time. So you don't need any text / spreadsheet editor or calculator,
+        saving you precious time.
+      </p>
+    </div>
+    <!--     <v-row>
       <v-col cols="12" md="3">
         <Stat
           title="Produtos"
@@ -51,7 +70,9 @@ import { baseUrl } from '~/global'
 
 export default {
   name: 'App',
-  components: { /* Stat */ },
+  components: {
+    /* Stat */
+  },
   data() {
     return {
       stat: {},
@@ -67,7 +88,19 @@ export default {
   },
   mounted() {
     console.log('MOUNTED!!')
-/*     this.getStats() */
+    /*     this.getStats() */
   },
 }
 </script>
+<style scoped>
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 750px;
+  margin: 0 auto;
+}
+.main-container h1 {
+  color: rgb(62, 177, 106);
+}
+</style>
