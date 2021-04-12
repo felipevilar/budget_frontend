@@ -1,5 +1,9 @@
 # sistema
 
+## About
+
+Budget System made with VueJS with login where you can register products, brands, categories and users and, from there, create quotes and print them. To access the system use username: root and password: root
+
 ## Build Setup
 
 ```bash
