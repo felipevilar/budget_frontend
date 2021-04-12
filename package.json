@@ -21,7 +21,8 @@
     "vue-toasted": "^1.1.28",
     "vue2-editor": "^2.10.2",
     "vuetify": "^2.2.11",
-    "ssri": ">=8.0.1"
+    "ssri": ">=8.0.1",
+    "is-svg": ">=4.2.2"
   },
   "devDependencies": {
     "@nuxtjs/vuetify": "^1.11.2",
