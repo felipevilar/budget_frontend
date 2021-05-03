@@ -6,6 +6,7 @@ Vue.use(Vuex)
 
 export const state = () => ({
   products: [],
+  loaded: [],
   categories: [],
   brands: [],
   users: [],
@@ -40,81 +41,80 @@ export const mutations = {
   },
   toogleMenuOn(state) {
     state.isMenuVisible = true
-  }
+  },
+  saveBud(state, car) {
+    state.loaded = car
+  },
 }
 
 export const actions = {
   //GET PRODUCTS/CATEGORIES/BRANDS/USERS
-  loadProducts({ commit }) {
+  async loadProducts({ commit }) {
     const url = `${baseUrl}/products`
-    axios
+    await axios
       .get(url)
       .then((res) => commit('setProducts', res))
       .catch((err) => console.log(err))
   },
-  loadCategories({ commit }) {
+  async loadCategories({ commit }) {
     const url = `${baseUrl}/categories`
-    axios
+    await axios
       .get(url)
       .then((res) => commit('setCategories', res))
       .catch((err) => console.log(err))
   },
-  loadBrands({ commit }) {
+  async loadBrands({ commit }) {
     const url = `${baseUrl}/brands`
-    axios
+    await axios
       .get(url)
       .then((res) => commit('setBrands', res))
       .catch((err) => console.log(err))
   },
-  loadUsers({ commit }) {
+  async loadUsers({ commit }) {
     const url = `${baseUrl}/users`
-    axios
+    await axios
       .get(url)
       .then((res) => commit('setUsers', res))
       .catch((err) => console.log(err))
   },
 
   //REMOVE PRODUCTS/CATEGORIES/BRANDS/USERS
-  removeCategory({}, categoryId) {
-    return axios
-      .delete(`${baseUrl}/categories/${categoryId}`)
+  async removeCategory({}, categoryId) {
+    return await axios.delete(`${baseUrl}/categories/${categoryId}`)
   },
-  removeProduct({}, productId) {
-    return axios
-      .delete(`${baseUrl}/products/${productId}`)
+  async removeProduct({}, productId) {
+    return await axios.delete(`${baseUrl}/products/${productId}`)
   },
-  removeBrand({}, brandId) {
-    return axios
-      .delete(`${baseUrl}/brands/${brandId}`)
+  async removeBrand({}, brandId) {
+    return await axios.delete(`${baseUrl}/brands/${brandId}`)
   },
-  removeUser({}, userId) {
-    return axios
-      .delete(`${baseUrl}/users/${userId}`)
+  async removeUser({}, userId) {
+    return await axios.delete(`${baseUrl}/users/${userId}`)
   },
 
   //SAVE PRODUCT/CATEGORY/BRAND/USER
-  saveCategory({}, category) {
+  async saveCategory({}, category) {
     const method = category.id ? 'put' : 'post'
     const id = category.id ? `/${category.id}` : ''
-    return axios[method](`${baseUrl}/categories${id}`, category)
+    return await axios[method](`${baseUrl}/categories${id}`, category)
   },
-  saveProduct({}, product) {
+  async saveProduct({}, product) {
     const method = product.id ? 'put' : 'post'
     const id = product.id ? `/${product.id}` : ''
 
-    return axios[method](`${baseUrl}/products${id}`, product)
+    return await axios[method](`${baseUrl}/products${id}`, product)
   },
-  saveBrand({}, brand) {
+  async saveBrand({}, brand) {
     const method = brand.id ? 'put' : 'post'
     const id = brand.id ? `/${brand.id}` : ''
 
-    return axios[method](`${baseUrl}/brands${id}`, brand)
+    return await axios[method](`${baseUrl}/brands${id}`, brand)
   },
-  saveUser({}, user) {
+  async saveUser({}, user) {
     const method = user.id ? 'put' : 'post'
     const id = user.id ? `/${user.id}` : ''
 
-    return axios[method](`${baseUrl}/users${id}`, user)
+    return await axios[method](`${baseUrl}/users${id}`, user)
   },
 
   //SET USER
@@ -128,5 +128,10 @@ export const actions = {
   },
   toogleMenuOn({ commit }) {
     commit('toogleMenuOn')
+  },
+
+  //SAVE PRODUCTS ON EXIT BUDGET PAGE
+  saveBud({ commit }, car) {
+    commit('saveBud', car)
   },
 }

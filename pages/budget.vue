@@ -16,6 +16,7 @@
     <v-row v-if="!printable">
       <v-col cols="12" sm="11">
         <v-autocomplete
+          v-if="!printable"
           v-model="select"
           :loading="loading"
           :items="items"
@@ -39,7 +40,7 @@
       </v-col>
 
       <v-col cols="12" sm="1" class="mx-auto my-auto text-center">
-        <v-btn icon>
+        <v-btn icon v-if="!printable">
           <v-icon large color="success" @click="addProduct"
             >mdi-plus-box</v-icon
           >
@@ -154,9 +155,16 @@ import DeleteDialog from '~/components/budget/DeleteDialog'
 export default {
   name: 'Budget',
   components: { ExpandedProductView, FooterBudget, DeleteDialog },
+
   mounted() {
-    if (this.items.length == 0) this.$store.dispatch('loadProducts')
+    this.$store.dispatch('loadProducts')
+    if (this.loaded.length > 0) this.desserts = [...this.loaded]
   },
+
+  beforeDestroy() {
+    this.$store.dispatch('saveBud', this.desserts)
+  },
+
   data() {
     return {
       printable: false,
@@ -189,6 +197,7 @@ export default {
   computed: {
     ...mapState({
       items: (state) => state.products,
+      loaded: (state) => state.loaded,
       includedIds() {
         return this.desserts.map((el) => el.id)
       },
