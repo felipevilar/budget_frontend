@@ -62,14 +62,14 @@ export default {
       this.user = {}
     },
     save() {
-      this.$store
+/*       this.$store
         .dispatch('saveUser', this.user)
         .then(() => {
           Vue.toasted.success('Sucesso!!')
           this.$store.dispatch('loadUsers')
           this.reset()
         })
-        .catch(showError)
+        .catch(showError) */
     },
     loadUsers(item) {
       this.user = item
