@@ -4,19 +4,19 @@
       <div><img src="~/assets/logo.png" /></div>
       <h1>Bem-Vindo!</h1>
       <p>
-        Bem-vindo ao Sistema de Orçamento! Você pode utiliza-lo para criar
-        orçamentos para seus clientes. O sistema calcula o custo e o lucro para
-        cada produto no orçamento, além do custo e lucro total, calculados em
-        tempo real. Assim você não precisa de nenhum editor de texto/planilha e
-        nem calculadora, economizando seu tempo preciosos.
+        Bem-vindo ao <strong>Sistema de Orçamento</strong>! Você pode utiliza-lo
+        para criar orçamentos para os clientes. O sistema calcula o custo e o
+        lucro para cada produto no orçamento além do custo e lucro total,
+        calculados em tempo real. Assim você não precisa de nenhum editor de
+        texto/planilha e nem calculadora, economizando seu tempo preciosos.
       </p>
       <h1>Welcome!</h1>
       <p>
-        Welcome to the Budget System! You can use it to create quotes for your
-        customers. The system calculates the cost and profit for each product in
-        the budget, in addition to the total cost and profit, calculated in real
-        time. So you don't need any text / spreadsheet editor or calculator,
-        saving you precious time.
+        Welcome to the <strong>Budget System!</strong> You can use it to create
+        quotes for your customers. The system calculates the cost and profit for
+        each product in the budget, in addition to the total cost and profit,
+        calculated in real time. So you don't need any text / spreadsheet editor
+        or calculator, saving you precious time.
       </p>
     </div>
     <!--     <v-row>
@@ -65,9 +65,6 @@
 import axios from 'axios'
 import { baseUrl } from '~/global'
 
-/* require('axios').defaults.headers.common['Authorization'] =
-  'bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MiwibmFtZSI6IkZlbGlwZSIsImVtYWlsIjoiZmVsaXBlQDNjb3Jlb25saW5lLmNvbS5iciIsImFkbWluIjp0cnVlLCJpYXQiOjE2MDg1ODQ2NzIsImV4cCI6MTYwODkzMDI3Mn0.OonltgMJZSaTZj2fet477nixLH9YtPBylvXN78bgyd0' */
-
 export default {
   name: 'App',
   components: {
@@ -79,15 +76,13 @@ export default {
     }
   },
   methods: {
-    getStats() {
-      console.log(baseUrl)
-      axios
+    async getStats() {
+      await axios
         .get(`${baseUrl}/stats`)
         .then((response) => (this.stat = response.data))
     },
   },
   mounted() {
-    console.log('MOUNTED!!')
     /*     this.getStats() */
   },
 }
@@ -100,7 +95,15 @@ export default {
   max-width: 750px;
   margin: 0 auto;
 }
+
 .main-container h1 {
   color: rgb(62, 177, 106);
+}
+
+.main-container img {
+  width: 60%;
+  display: flex;
+  margin: 0 auto;
+  margin-bottom: 20px;
 }
 </style>

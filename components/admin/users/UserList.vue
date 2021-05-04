@@ -1,7 +1,7 @@
 <template>
   <v-container fluid>
     <v-text-field
-      outlined
+      filled
       v-model="search"
       append-icon="mdi-magnify"
       label="Buscar..."

@@ -4,11 +4,11 @@
       <input id="product-id" type="hidden" v-model="product.id" />
       <v-row>
         <v-col cols="6">
-          <v-text-field outlined v-model="product.name" required label="Nome" />
+          <v-text-field filled v-model="product.name" required label="Nome" />
         </v-col>
         <v-col cols="6">
           <v-text-field
-            outlined
+            filled
             v-model="product.imageUrl"
             required
             label="Imagem (Url)"
@@ -19,14 +19,14 @@
       <v-row>
         <v-col cols="4">
           <v-text-field
-            outlined
+            filled
             v-model="product.model"
             label="Modelo"
           />
         </v-col>
         <v-col cols="4">
           <v-select
-            outlined
+            filled
             :items="brands"
             item-text="name"
             item-value="id"
@@ -36,7 +36,7 @@
         </v-col>
         <v-col cols="4">
           <v-select
-            outlined
+            filled
             :items="categories"
             item-text="path"
             item-value="id"
@@ -49,7 +49,7 @@
         <v-col cols="12">
           <v-textarea
             name="product-desc"
-            outlined
+            filled
             label="Descrição do Produto"
             auto-grow
             value="Descrição do Produto..."
@@ -60,7 +60,7 @@
       <v-row>
         <v-col cols="12" md="2">
           <v-text-field
-            outlined
+            filled
             v-model="product.buyPrice"
             required
             label="Preço de Compra"
@@ -69,7 +69,7 @@
         </v-col>
         <v-col cols="12" md="2">
           <v-text-field
-            outlined
+            filled
             v-model="product.taxes"
             v-show="taxesInPercent"
             required
@@ -77,7 +77,7 @@
             prefix="%"
           />
           <v-text-field
-            outlined
+            filled
             v-model="product.taxes"
             v-show="!taxesInPercent"
             required
@@ -93,7 +93,7 @@
         </v-col>
         <v-col cols="12" md="2">
           <v-text-field
-            outlined
+            filled
             v-model="product.sellPrice"
             required
             label="Preço de Venda"
@@ -102,7 +102,7 @@
         </v-col>
         <v-col cols="12" md="2">
           <v-text-field
-            outlined
+            filled
             v-model="product.qtd"
             required
             type="number"
@@ -142,8 +142,7 @@
 <script>
 import ProductList from '~/components/admin/products/ProductList'
 import Vue from 'vue'
-import { showError } from '@/global'
-import { calcProfit } from '@/globalv2'
+import { showError, calcProfit } from '@/global'
 import { mapState } from 'vuex'
 
 export default {
@@ -186,7 +185,7 @@ export default {
           })
           .catch(showError)
       } else {
-        Vue.toasted.error("Preencha os preços!")
+        Vue.toasted.error("Preencha os preços e impostos!")
       }
     },
     loadProduct(item) {
@@ -222,4 +221,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+
+</style>

@@ -47,9 +47,8 @@ export default {
     reset() {
       this.$refs.form.reset()
     },
-    signin() {
-      console.log('THIS USER: ' + JSON.stringify(this.user))
-      axios
+    async signin() {
+      await axios
         .post(`${baseUrl}/signin`, this.user)
         .then((res) => {
           this.$store.dispatch('setUser', res.data)
@@ -58,8 +57,8 @@ export default {
         })
         .catch(showError)
     },
-    signup() {
-      axios
+    async signup() {
+      await axios
         .post(`${baseUrl}/signup`, this.user)
         .then(() => {
           Vue.toast.success('Sucesso!')

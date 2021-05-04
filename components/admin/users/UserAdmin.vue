@@ -3,16 +3,16 @@
     <v-form>
       <v-row>
         <v-col cols="6">
-          <v-text-field outlined v-model="user.name" required label="Nome" />
+          <v-text-field filled v-model="user.name" required label="Nome" />
         </v-col>
         <v-col cols="6">
-          <v-text-field outlined v-model="user.email" required label="E-mail" />
+          <v-text-field filled v-model="user.email" required label="E-mail" />
         </v-col>
       </v-row>
       <v-row>
         <v-col cols="6">
           <v-text-field
-            outlined
+            filled
             v-model="user.password"
             type="password"
             required
@@ -21,7 +21,7 @@
         </v-col>
         <v-col cols="6">
           <v-text-field
-            outlined
+            filled
             v-model="user.confirmPassword"
             type="password"
             required

@@ -5,7 +5,7 @@
       <v-row>
         <v-col cols="6">
           <v-text-field
-            outlined
+            filled
             v-model="category.name"
             required
             label="Nome"
@@ -13,7 +13,7 @@
         </v-col>
         <v-col cols="6">
           <v-select
-            outlined
+            filled
             :items="categories"
             item-text="path"
             item-value="id"

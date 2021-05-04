@@ -10,9 +10,10 @@ export function showError(e) {
     Vue.toasted.error(e.response.data)
   } else if (typeof e === 'string') {
     console.log('ERROR2: ' + JSON.stringify(e))
-    Vue.toasted.error(e)
+    Vue.toasted.error(e.response.data)
   } else {
-    console.log('ERROR3: ' + JSON.stringify(e))
+    console.log('ERROR3: ' + JSON.stringify(e.response.data))
+    Vue.toasted.error(e.response.data)
   }
 }
 
@@ -22,11 +23,26 @@ export const formatter = new Intl.NumberFormat('pt-BR', {
   currency: 'BRL',
 })
 
-
-export const formatterNum = new Intl.NumberFormat("pt-BR", {
+export const formatterNum = new Intl.NumberFormat('pt-BR', {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
 })
-export const userKey = '__sys_user'
 
-export default { baseUrl, showError, formatter, formatterNum, userKey }
+export function calcProfit(sellPrice, buyPrice, taxes, options) {
+  let cost = buyPrice + taxes
+  let profit = sellPrice - cost
+  if (options) {
+    return formatter.format(profit)
+  }
+  return formatterNum.format((profit / cost) * 100) + '%'
+}
+
+export const userKey = '__sys_user'
+export default {
+  baseUrl,
+  showError,
+  formatter,
+  formatterNum,
+  calcProfit,
+  userKey,
+}

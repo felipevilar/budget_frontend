@@ -40,7 +40,7 @@ export default {
         { tab: 'Produtos', content: 'ProductAdmin', icon: 'mdi-cog' },
         { tab: 'Categorias', content: 'CategoryAdmin', icon: 'mdi-cog' },
         { tab: 'Marcas', content: 'BrandAdmin', icon: 'mdi-cog' },
-        /* { tab: 'Usuários', content: 'UserAdmin', icon: 'mdi-cog' }, */
+/*         { tab: 'Usuários', content: 'UserAdmin', icon: 'mdi-cog' },  */
       ],
     }
   },

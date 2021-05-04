@@ -4,7 +4,7 @@
       <input id="brand-id" type="hidden" v-model="brand.id" />
       <v-row>
         <v-col cols="12">
-          <v-text-field outlined v-model="brand.name" required label="Nome" />
+          <v-text-field filled v-model="brand.name" required label="Nome" />
         </v-col>
       </v-row>
       <v-row>

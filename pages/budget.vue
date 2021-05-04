@@ -16,26 +16,27 @@
     <v-row v-if="!printable">
       <v-col cols="12" sm="11">
         <v-autocomplete
+          label="Qual produto deseja adicionar?"
+          class="mx-4"
+          max-width="200px"
           v-if="!printable"
           v-model="select"
           :loading="loading"
           :items="items"
           item-text="name"
           item-value="id"
-          prepend-icon="mdi-magnify"
-          clearable
+          prepend-inner-icon="mdi-magnify"
           :search-input.sync="search"
+          clearable
+          hide-selected
+          chips
+          deletable-chips
           cache-items
-          class="mx-4"
-          flat
-          hide-no-data
-          hide-details
-          max-width="200px"
           multiple
           return-object
-          label="Qual produto deseja adicionar?"
-          solo-inverted
-          @keydown="addProduct"
+          filled
+          @change="handleInsertion"
+          @keydown.enter="addProduct"
         ></v-autocomplete>
       </v-col>
 
@@ -78,7 +79,7 @@
           v-model="item.qtd"
           dense
           width="50px"
-          outlined
+          filled
           class="pt-2"
           required
           type="number"
@@ -90,7 +91,7 @@
           v-model="item.discount"
           dense
           width="50px"
-          outlined
+          filled
           prefix="%"
           class="pt-2"
         />
@@ -108,7 +109,7 @@
         <v-text-field
           v-model="item.sellPrice"
           dense
-          outlined
+          filled
           class="pt-2"
           required
           prefix="R$"
@@ -182,13 +183,13 @@ export default {
           sortable: false,
           value: 'name',
           show: true,
-          width: '30%',
+
         },
         { text: 'Modelo', value: 'model' },
         { text: 'Custo', value: 'cost' },
-        { text: 'Qtd', value: 'qtd', width: '5%' },
+        { text: 'Qtd', value: 'qtd'},
         { text: 'Preço (R$)', value: 'sellPrice' },
-        { text: 'Desconto (%)', value: 'discount', width: '8%' },
+        { text: 'Desconto (%)', value: 'discount' },
         { text: 'Total', value: 'total' },
         { text: 'Ações', value: 'actions' },
       ],
@@ -198,17 +199,17 @@ export default {
     ...mapState({
       items: (state) => state.products,
       loaded: (state) => state.loaded,
+    }),
       includedIds() {
         return this.desserts.map((el) => el.id)
       },
-      _headers() {
-        if (this.printable)
-          return this.headers.filter(
-            (header) => header.text !== 'Custo' && header.text !== 'Ações'
-          )
-        return this.headers
-      },
-    }),
+    _headers() {
+      if (this.printable)
+        return this.headers.filter(
+          (header) => header.text !== 'Custo' && header.text !== 'Ações'
+        )
+      return this.headers
+    },
   },
   watch: {
     search(val) {
@@ -216,12 +217,15 @@ export default {
     },
   },
   methods: {
+    handleInsertion(e) {
+      this.search = null;
+    },
     print() {
       const self = this
-      this.printable = true
-      this.btnPrint = false
-      this.$store.dispatch('toogleMenuOff')
-      this.btnPrint = false
+      self.printable = true
+      self.btnPrint = false
+      self.$store.dispatch('toogleMenuOff')
+      self.btnPrint = false
       setTimeout(() => window.print(), 100)
       setTimeout(() => (self.btnPrint = true), 200)
     },
@@ -230,12 +234,12 @@ export default {
       this.$store.dispatch('toogleMenuOn')
     },
     addProduct() {
-      console.log('includedId: ' + this.includedIds)
+      console.log("addProduct()");
       if (this.select) {
         this.select.map((el) => {
           if (this.includedIds.indexOf(el.id) === -1) {
             let cost = el.buyPrice * (el.taxes / 100 + 1)
-
+            
             return this.desserts.push({
               ...el,
               cost: Number(cost.toFixed(2)),
